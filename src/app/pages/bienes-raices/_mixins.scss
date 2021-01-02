@@ -1,0 +1,32 @@
+@mixin mobile {
+  @media only screen and (min-width: #{$mobile}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media only screen and (min-width: #{$tablet}) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media only screen and (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin boton($color) {
+  background-color: $color;
+  display: block;
+  padding: 1rem;
+  text-align: center;
+  color: $claro;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid $color;
+  transition: all 0.4s ease-in-out;
+
+  &:hover {
+    background-color: $claro;
+    color: $color;
+  }
+}

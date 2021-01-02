@@ -1,0 +1,75 @@
+@import "_variables";
+@import "_mixins";
+
+.body {
+  background-color: $fondo;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: 2rem;
+
+  h1 {
+    margin: 0;
+    font-size: 2rem;
+    text-align: center;
+  }
+}
+
+.entradas {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-between;
+  height: 5000px;
+  @include desktop {
+    height: 3500px;
+  }
+  @include desktopXL {
+    height: 4500px;
+  }
+  max-width: 100%;
+  margin: 0 4rem;
+
+  .entrada {
+    width: calc(100%);
+    @include desktop {
+      width: calc(50% - 1rem);
+    }
+    margin-bottom: 1.4rem;
+    @include sombra;
+    img {
+      max-width: 100%;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-left: 1rem;
+    }
+
+    .boton {
+      @include boton(#2ecc71);
+    }
+  }
+}
+
+.footer {
+  p {
+    margin: 0;
+    font-size: 1.2;
+    text-align: center;
+    background-color: black;
+    color: white;
+  }
+}

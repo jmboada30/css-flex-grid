@@ -1,0 +1,59 @@
+@import "_variables";
+
+@mixin mobile {
+  @media only screen and (min-width: #{$mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: #{$desktop}) {
+    @content;
+  }
+}
+@mixin desktopXL {
+  @media only screen and (min-width: #{$desktopXL}) {
+    @content;
+  }
+}
+
+@mixin gradiente($color1, $color2) {
+  background: linear-gradient(to right, $color1 0%, $color2 100%);
+}
+
+@mixin boton($color1) {
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  height: 36px;
+  padding: 0 26px;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+
+  color: $color1;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.2rem;
+  background-color: transparent;
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.87);
+    background-color: #f1f1f1da;
+    outline: 0;
+  }
+}
+
+@mixin sombra {
+  -webkit-box-shadow: 0px -1px 35px -10px rgba(0, 0, 0, 0.67);
+  -moz-box-shadow: 0px -1px 35px -10px rgba(0, 0, 0, 0.67);
+  box-shadow: 0px -1px 35px -10px rgba(0, 0, 0, 0.67);
+}

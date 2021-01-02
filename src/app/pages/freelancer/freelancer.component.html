@@ -1,0 +1,74 @@
+<div class="body">
+  <div class="hero">
+    <div class="contenedor">
+      <div class="contenido">
+        <h1 class="titulo">Diseño y desarrollo Web</h1>
+        <p class="subtitulo">Diseño, Programación e E-commerce</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="servicios contenedor">
+    <div class="servicio">
+      <h2>Diseño Web</h2>
+      <i class="fas fa-pencil-alt"></i>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
+        perspiciatis repellendus quae, provident eligendi eum aliquam.
+      </p>
+    </div>
+
+    <div class="servicio">
+      <h2>Programación Web</h2>
+      <i class="fas fa-code"></i>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
+        perspiciatis repellendus quae, provident eligendi eum aliquam.
+      </p>
+    </div>
+
+    <div class="servicio">
+      <h2>E-commerce</h2>
+      <i class="fas fa-shopping-bag"></i>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
+        perspiciatis repellendus quae, provident eligendi eum aliquam.
+      </p>
+    </div>
+  </div>
+
+  <div class="portafolio contenedor">
+    <h2>Mi portafolio</h2>
+
+    <div class="listado" id="listado">
+      <div class="elemento" *ngFor="let item of datos">
+        <img
+          [src]="'/assets/freelancer/img/' + item.id + '.jpg'"
+          alt="imagen"
+        />
+        <div class="contenido">
+          <h3>{{ item.nombre }}</h3>
+          <p>{{ item.desc }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="contenedor">
+      <div class="widget">
+        <h3>Contacto</h3>
+        <p>Tel: 930309216</p>
+        <p>Direccion del Estudio</p>
+        <p>New York</p>
+      </div>
+      <div class="widget">
+        <h3>Sobre Mi</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus
+          consequatur modi ea voluptatibus? Reprehenderit, unde.
+        </p>
+      </div>
+    </div>
+  </footer>
+</div>

@@ -1,0 +1,248 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+.body {
+  font-family: $fuente_principal;
+  background-color: $gris;
+}
+
+.pagina {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+}
+
+.nombre-sitio {
+  flex: 0 0 5rem;
+  background-color: $segundario;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+
+  @include desktop {
+    flex: 0 0 20rem;
+  }
+
+  h1 {
+    color: $blanco;
+    margin: 0;
+  }
+
+  .escritorio {
+    display: none;
+    @include desktop {
+      display: block;
+    }
+  }
+
+  .tablet {
+    @include desktop {
+      display: none;
+    }
+  }
+}
+
+.barra {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  background-color: $primario;
+
+  .menu-izq {
+    flex: 1;
+    align-items: center;
+    padding: 1rem;
+    display: flex;
+
+    i {
+      color: $blanco;
+      font-size: 1.4rem;
+    }
+  }
+
+  .menu-der {
+    display: flex;
+    .caja {
+      padding: 0 1rem;
+      display: flex;
+      align-items: center;
+      &:hover {
+        background-color: darken($primario, 5);
+      }
+
+      a {
+        color: $blanco;
+        text-decoration: none;
+
+        span {
+          background-color: $terciario;
+          border-radius: 50%;
+          margin-left: 0.5rem;
+          padding: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+.contenedor-principal {
+  flex: 1;
+  display: flex;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar {
+  background-color: $grisOscuro;
+  flex: 0 0 20rem;
+  padding: 1rem;
+  color: $blanco;
+
+  .usuario {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-weight: normal;
+    img {
+      max-width: 5rem;
+    }
+    span {
+      font-weight: bold;
+      display: block;
+    }
+  }
+
+  .buscador {
+    margin-top: 1rem;
+    input[type="text"] {
+      width: 100%;
+      height: 3rem;
+      border: none;
+      padding-left: 1rem;
+    }
+  }
+
+  .menu-admin {
+    margin-top: 2rem;
+  }
+}
+
+.menu-admin {
+  ul {
+    padding: 0 0 0 1rem;
+
+    > li {
+      padding: 0.5rem;
+      list-style: none;
+      margin-bottom: 0.5rem;
+      a {
+        padding: 0.5rem;
+        color: $blanco;
+        text-decoration: none;
+        transition: padding-left 0.3s ease;
+        &:hover {
+          background-color: $primario;
+          padding-left: 2rem;
+        }
+
+        i {
+          margin-right: 0.5rem;
+        }
+      }
+
+      &:hover {
+        ul {
+          opacity: 1;
+          display: block;
+          visibility: visible;
+        }
+      }
+
+      ul {
+        padding: 1rem;
+        display: none;
+        background-color: darken($grisOscuro, 1);
+        li {
+          margin-bottom: 0.5rem;
+          list-style: none;
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.contenido {
+  flex: 1;
+  padding: 2rem;
+
+  h2 {
+    margin: 0 0 1rem 0;
+  }
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  @include tablet {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .campo {
+    display: flex;
+    flex: 0 0 100%;
+    margin-bottom: 1rem;
+    align-items: center;
+
+    @include tablet {
+      flex: 0 0 calc(50% - 1rem);
+    }
+
+    &.expandir {
+      flex: 0 0 calc(100%);
+      align-items: flex-start;
+
+      label {
+        flex: 0 0 12.5%;
+      }
+
+      textarea {
+        flex: 1;
+      }
+    }
+
+    label {
+      flex: 0 0 25%;
+    }
+
+    input[type="text"] {
+      flex: 0 0 75%;
+      height: 2rem;
+    }
+
+    .opciones {
+      display: flex;
+      flex-wrap: wrap;
+      flex: 1;
+      label {
+        padding-left: 1rem;
+      }
+    }
+
+    &.enviar {
+      display: flex;
+      justify-content: flex-end;
+
+      .boton {
+        @include boton($primario);
+      }
+    }
+  }
+}

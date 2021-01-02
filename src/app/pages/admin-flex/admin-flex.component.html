@@ -1,0 +1,176 @@
+<div class="body">
+  <div class="pagina">
+    <header class="header">
+      <div class="nombre-sitio">
+        <h1 class="escritorio">SGI Contratas</h1>
+        <h1 class="tablet">SGI</h1>
+      </div>
+
+      <div class="barra">
+        <div class="menu-izq">
+          <i
+            *ngIf="!oculto"
+            class="fas fa-arrow-left"
+            (click)="ocultarContenedor()"
+          ></i>
+          <i
+            *ngIf="oculto"
+            class="fas fa-arrow-right"
+            (click)="ocultarContenedor()"
+          ></i>
+        </div>
+
+        <div class="menu-der">
+          <div class="mensaje caja">
+            <a href="#">
+              <i class="fas fa-comment-alt"></i>
+              Mensajes
+              <span>20</span>
+            </a>
+          </div>
+          <div class="alertas caja">
+            <a href="#">
+              <i class="fas fa-bell"></i>
+              Alertas
+              <span>20</span>
+            </a>
+          </div>
+          <div class="cerrar caja">
+            <a href="#">Cerrar Sesion</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main
+      [style.margin-left.rem]="width_contenedor"
+      class="contenedor-principal"
+    >
+      <aside class="sidebar">
+        <div class="usuario">
+          <img src="/assets/flexadmin/img/usuario.svg" alt="" />
+          <p>Bienvenid@: <span>Joel Moises</span></p>
+        </div>
+
+        <div class="buscador">
+          <input type="text" placeholder="Buscar..." />
+        </div>
+
+        <div class="menu-admin">
+          <h2>Menu de administración</h2>
+          <ul>
+            <li>
+              <a href="#"><i class="fas fa-address-book"></i>Clientes</a>
+              <ul>
+                <li>
+                  <a href="#"><i class="fas fa-list"></i>Ver todos</a>
+                </li>
+                <li>
+                  <a href="#"><i class="fas fa-plus"></i>Agregar Nuevo</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-chart-line"></i>Ventas</a>
+              <ul>
+                <li>
+                  <a href="#"><i class="fas fa-list"></i>Ver todos</a>
+                </li>
+                <li>
+                  <a href="#"><i class="fas fa-plus"></i>Agregar Nuevo</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-box"></i>Inventario</a>
+              <ul>
+                <li>
+                  <a href="#"><i class="fas fa-list"></i>Ver todos</a>
+                </li>
+                <li>
+                  <a href="#"><i class="fas fa-plus"></i>Agregar Nuevo</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-file-alt"></i>Facturas</a>
+              <ul>
+                <li>
+                  <a href="#"><i class="fas fa-list"></i>Ver todos</a>
+                </li>
+                <li>
+                  <a href="#"><i class="fas fa-plus"></i>Agregar Nuevo</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-calendar-alt"></i>Calendario</a>
+              <ul>
+                <li>
+                  <a href="#"><i class="fas fa-list"></i>Ver todos</a>
+                </li>
+                <li>
+                  <a href="#"><i class="fas fa-plus"></i>Agregar Nuevo</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-pencil-alt"></i>Editar perfil</a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+      <div class="contenido">
+        <h2>Administración de Clientes</h2>
+        <form class="formulario">
+          <div class="campo">
+            <label for="nombre">Nombre Cliente</label>
+            <input type="text" id="nombre" />
+          </div>
+
+          <div class="campo">
+            <label for="apellido">Apellido Cliente</label>
+            <input type="text" id="apellido" />
+          </div>
+
+          <div class="campo">
+            <label for="Empresa">Empresa</label>
+            <input type="text" id="Empresa" />
+          </div>
+
+          <div class="campo">
+            <label for="direccion">Dirección</label>
+            <input type="text" id="direccion" />
+          </div>
+
+          <div class="campo expandir">
+            <label for="info">Otra Información</label>
+            <textarea id="info" cols="30" rows="10"></textarea>
+          </div>
+
+          <div class="campo expandir">
+            <label for="membresia">Membresia</label>
+            <div class="opciones">
+              <input type="radio" name="contact" id="normal" value="normal" />
+              <label for="normal">Normal</label>
+
+              <input type="radio" name="contact" id="basico" value="basico" />
+              <label for="basico">Basico</label>
+
+              <input type="radio" name="contact" id="premium" value="premium" />
+              <label for="premium">Premium</label>
+
+              <input type="radio" name="contact" id="gold" value="gold" />
+              <label for="gold">Gold</label>
+            </div>
+          </div>
+
+          <div class="campo enviar expandir">
+            <input type="submit" class="boton" value="Enviar" />
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+</div>

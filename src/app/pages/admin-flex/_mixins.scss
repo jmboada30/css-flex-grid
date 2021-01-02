@@ -1,0 +1,63 @@
+// Botones
+@mixin boton($color) {
+  background-color: $color;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  color: $blanco;
+}
+
+@mixin box-sizing($box-model) {
+  box-sizing: $box-model;
+}
+
+@mixin imagen-fondo($ruta) {
+  background-image: url($ruta);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+@mixin gradiente($color1, $color2) {
+  background: linear-gradient(to right, $color1 0%, $color2 100%);
+}
+
+// medias Queries
+
+@mixin telefono {
+  @media only screen and (min-width: #{$telefono} ) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media only screen and (min-width: #{$tablet} ) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media only screen and (min-width: #{$desktop} ) {
+    @content;
+  }
+}
+
+// Menus de navegacion
+
+@mixin footer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  flex: 1;
+
+  @include desktop {
+    flex: 0 1 calc(30% - 1rem);
+  }
+
+  a {
+    color: $negro;
+    text-decoration: none;
+  }
+
+  .home {
+    color: red;
+  }
+}

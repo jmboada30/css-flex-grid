@@ -1,0 +1,56 @@
+.centrado {
+  font-family: "Montserrat", sans-serif;
+  background-image: url("/assets/layaoutsflex/img/hamburguesa.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  > div {
+    flex: 0 0 calc(33.3% - 3rem);
+  }
+
+  .contenido-centrado {
+    color: #fff;
+    text-align: center;
+    h1 {
+      color: #e0ab10;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .ubicacion {
+      font-weight: 900;
+      font-size: 1.4rem;
+    }
+  }
+}
+
+.aviso {
+  background-color: #e0ab10;
+  padding: 1rem;
+  font-size: 1.4rem;
+  text-align: center;
+
+  span {
+    font-size: 3rem;
+    display: block;
+  }
+}
+
+.arriba {
+  align-self: flex-start;
+  margin-top: 1rem;
+}
+
+.abajo {
+  align-self: flex-end;
+  margin-bottom: 1rem;
+}

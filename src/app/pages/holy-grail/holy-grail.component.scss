@@ -1,0 +1,97 @@
+@import "variables";
+@import "mixins";
+
+.body {
+  display: flex;
+  flex-direction: column;
+  background-color: $white;
+  font-family: $fontPrincipal;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  img {
+    max-width: 100%;
+  }
+}
+
+.navegacion {
+  background-color: $primary;
+  ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      flex-direction: row;
+      margin: 0 auto;
+      width: 70%;
+    }
+    li {
+      flex: 1 0 25%;
+      list-style: none;
+      text-align: center;
+      padding: 1rem 0;
+      a {
+        text-decoration: none;
+        color: $white;
+      }
+    }
+  }
+}
+
+.contenido {
+  flex: 0 0 100vh;
+  @include tablet {
+    display: flex;
+  }
+
+  .contenido-principal {
+    max-width: 80%;
+    margin: 0 auto 2rem auto;
+    @include tablet {
+      max-width: 60%;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .sidebar {
+    background-color: $bg-grey;
+    padding: 1rem;
+    @include tablet {
+      padding: 1rem 2rem 3rem 2rem;
+      flex: 0 0 30%;
+      order: -1;
+    }
+
+    li {
+      margin-bottom: 1rem;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.footer {
+  background-color: $secondary;
+  p {
+    font-size: 1.1rem;
+    text-align: center;
+    color: $white;
+    padding: 1rem;
+    margin: 0;
+    @include tablet {
+      font-size: 1.3rem;
+    }
+  }
+}

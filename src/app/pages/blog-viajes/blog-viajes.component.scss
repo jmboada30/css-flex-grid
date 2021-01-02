@@ -1,0 +1,276 @@
+@import "variables";
+@import "mixins";
+
+.body {
+  background-color: #f3f3f3;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.entradas {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+}
+
+/*Header*/
+.hero {
+  background-image: url("/assets/blogviajes/img/hero.jpg");
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+
+  .barra {
+    position: absolute;
+    background-color: $azul;
+    width: 100%;
+    align-items: center;
+    padding: 1rem 0;
+    top: 0;
+  }
+  .contenedor {
+    display: flex;
+    margin: 0 auto;
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+    @include tablet() {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  .navegacion ul {
+    display: flex;
+    li {
+      margin-right: 1rem;
+      &:last-of-type {
+        margin-right: 0;
+      }
+      list-style: none;
+      color: $blanco;
+      font-size: 1rem;
+      @include tablet() {
+        font-size: 1.5rem;
+      }
+      cursor: pointer;
+    }
+  }
+
+  .header-contenido {
+    display: flex;
+    justify-content: flex-start;
+    text-transform: uppercase;
+    color: $azul;
+    font-size: 1.2rem;
+    width: 60%;
+    margin-left: 2rem;
+
+    @include tablet {
+      margin-left: 4rem;
+      font-size: 2rem;
+    }
+  }
+}
+
+/*Contenido*/
+
+@media screen and (min-width: 480px) {
+  .contenido-principal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .entrada {
+    flex: 0 0 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .entrada {
+    flex: 0 1 calc(50% - 1rem);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .entrada {
+    flex: 0 1 calc(33% - 1rem);
+  }
+}
+
+.h2-title {
+  flex: 0 1 100%;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.entrada {
+  margin-bottom: 1rem;
+  // border: solid grey 1px;
+}
+
+.contenido-principal {
+  margin: 0 1rem;
+}
+
+.contenido {
+  background-color: $blanco;
+  text-transform: uppercase;
+  padding: 1rem;
+  text-align: center;
+}
+
+.contenido span {
+  color: #db008d;
+}
+
+.contenido h3 {
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+}
+
+.boton {
+  background-color: $azul;
+  color: $blanco;
+  padding: 0.8rem 2rem;
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+}
+
+.categorias ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto 1.2rem auto;
+  padding: 0;
+
+  li {
+    flex: 1 0 50%;
+    list-style: none;
+    padding: 2rem;
+
+    @include tablet {
+      flex: 1;
+    }
+
+    &:nth-child(1) {
+      background-color: $azul;
+    }
+    &:nth-child(2) {
+      background-color: $rosado;
+    }
+    &:nth-child(3) {
+      background-color: $morado;
+    }
+    &:nth-child(4) {
+      background-color: $naranja;
+    }
+
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: $blanco;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+    i {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+footer {
+  background-color: $azul;
+
+  .footer-contenedor {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    @include tablet {
+      flex-direction: row;
+    }
+    .caja {
+      flex: 1 0 33%;
+      height: 100%;
+      color: $blanco;
+      padding-left: 2rem;
+
+      h2 {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+      }
+    }
+
+    .nosotros {
+      padding-right: 1rem;
+    }
+  }
+}
+
+.sociales ul span {
+  display: none;
+}
+
+.sociales ul {
+  display: flex;
+  justify-content: space-around;
+  flex: 1 0 auto;
+  list-style: none;
+  li {
+    margin-right: 1rem;
+  }
+}
+
+.sociales ul li a {
+  text-decoration: none;
+}
+
+.sociales ul li a:before {
+  font-family: "Font Awesome 5 Brands";
+  color: $blanco;
+  font-size: 2rem;
+}
+
+.sociales ul li a[href*="facebook.com"]::before {
+  content: "\f39e";
+}
+.sociales ul li a[href*="twitter.com"]::before {
+  content: "\f099";
+}
+.sociales ul li a[href*="youtube.com"]::before {
+  content: "\f167";
+}
+.sociales ul li a[href*="instagram.com"]::before {
+  content: "\f16d";
+}
+.sociales ul li a[href*="pinterest.com"]::before {
+  content: "\f0d2";
+}
+
+.copyright {
+  color: $blanco;
+  background-color: $copyright;
+  margin-top: 2rem;
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 1.2rem;
+}
